@@ -47,9 +47,9 @@ def find_person_data_by_name(suchstring):
   
 #Testen der Funktionen
 if __name__ == "__main__":
-    #Variablen für die Funktionen
+    # Variablen für die Funktionen
     person_data = get_person_data()
-    #print(person_data)
+    # print(person_data)
     names = get_person_list(person_data)
     
     #Name und Bild der Peson finden

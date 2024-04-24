@@ -10,10 +10,10 @@ names = get_person_list(person_data)
 if 'current_user' not in st.session_state:
     st.session_state.current_user = 'None'
 
-#Überschrift 1 erstellen
+# Überschrift 1 erstellen
 st.write('# Analyse EKG App')
 
-#Überschrift der zweiten Ebene
+# Überschrift der zweiten Ebene
 st.write('## Versuchsperson auswählen')
 
 # Eine Auswahlbox erstellen
@@ -22,13 +22,13 @@ st.session_state.current_user = st.selectbox(
     options = names, key ="sbVersuchsperson")
 
 st.write("Currently selected user is: " + st.session_state.current_user)
-
 print(find_person_data_by_name(st.session_state.current_user)["picture_path"])
 
 # Paket zum anzeigen der Bilder
 from PIL import Image
-# Laden eines Bilds
 
+# Laden eines Bilds
 image = Image.open(find_person_data_by_name(st.session_state.current_user)["picture_path"])
+
 # Anzeigen eines Bilds mit Caption
 st.image(image, caption=st.session_state.current_user)
