@@ -28,7 +28,7 @@ def find_person_data_by_name(suchstring):
 
     #Namen als Variablen für die Funktionen als neue Liste festlegen
     person_data = get_person_data()
-    print(names)
+    #print(names)
     if suchstring == "None":
         return {}
 
@@ -37,7 +37,7 @@ def find_person_data_by_name(suchstring):
     nachname = two_names[0]
 
     for eintrag in person_data:
-        print(eintrag)
+        #print(eintrag)
         if (eintrag["lastname"] == nachname and eintrag["firstname"] == vorname):
             print()
 
@@ -49,13 +49,14 @@ def find_person_data_by_name(suchstring):
 if __name__ == "__main__":
     #Variablen für die Funktionen
     person_data = get_person_data()
-    print(person_data)
+    #print(person_data)
     names = get_person_list(person_data)
     
-    #Name und Bild verbinden
+    #Name und Bild der Peson finden
     suchstring  = "Huber, Julian"
     name = find_person_data_by_name(suchstring)
-    print(name)
+    #print(name)
     
-    #Pfad des Bildes festlegen
+    # Auslesen des Pfades aus dem zurückgegebenen Dictionary
     current_picture_path = name["picture_path"]
+    print(current_picture_path)

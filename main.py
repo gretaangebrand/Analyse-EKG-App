@@ -1,6 +1,6 @@
 import streamlit as st
 #importiert die Funktionen get_person_data und get_person_list aus read_data.py
-from read_data import get_person_data, get_person_list
+from read_data import get_person_data, get_person_list, find_person_data_by_name
 
 #eingefügt von read_data.py
 person_data = get_person_data()
@@ -23,9 +23,12 @@ st.session_state.current_user = st.selectbox(
 
 st.write("Currently selected user is: " + st.session_state.current_user)
 
+print(find_person_data_by_name(st.session_state.current_user)["picture_path"])
+
 # Paket zum anzeigen der Bilder
 from PIL import Image
 # Laden eines Bilds
-image = Image.open("../data/pictures/js.jpg")
+
+image = Image.open(find_person_data_by_name(st.session_state.current_user)["picture_path"])
 # Anzeigen eines Bilds mit Caption
 st.image(image, caption=st.session_state.current_user)
