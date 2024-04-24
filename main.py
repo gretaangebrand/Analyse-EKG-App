@@ -22,3 +22,10 @@ st.session_state.current_user = st.selectbox(
     options = names, key ="sbVersuchsperson")
 
 st.write("Currently selected user is: " + st.session_state.current_user)
+
+# Paket zum anzeigen der Bilder
+from PIL import Image
+# Laden eines Bilds
+image = Image.open("../data/pictures/js.jpg")
+# Anzeigen eines Bilds mit Caption
+st.image(image, caption=st.session_state.current_user)
